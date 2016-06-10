@@ -1,6 +1,6 @@
 {
   "name" : "perl-app",
-  "version" : "0.0.1",
+  "version" : "0.0.2",
   "description" : "Installs Perl web application and dependencies, runs application as ubic service with Starman",
   "url" : "https://github.com/melezhik/perl-app"
 }

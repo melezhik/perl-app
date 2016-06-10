@@ -3,6 +3,7 @@ app_dir=$(config app_dir)
 app_user=$(config app_user)
 app_source_url=$(config app_source_url)
 git_branch=$(config git_branch)
+http_port=$(config http_port)
 
 sudo useradd -m --shell `which bash` $app_user
 
@@ -39,7 +40,7 @@ sub start {
 __PACKAGE__->new(
     server => 'Starman',
     app => "$app_dir/app.psgi",
-    port => 5000,
+    port => $http_port,
     user => "$app_user",
 );
 
