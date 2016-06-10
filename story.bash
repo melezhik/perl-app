@@ -17,10 +17,10 @@ sudo ubic-admin setup --batch-mode --quiet
 sudo ubic stop perl-app
 
 if test -d $app_dir/.git; then
-  sudo -u $app_user bash --login -c "cd $app_dir && git pull && carton install --deployment"
+  sudo -u $app_user bash --login -c "cd $app_dir && git pull && carton install --deployment" || exit 1
 else
   sudo -u $app_user bash --login -c "git clone --branch $git_branch $app_source_url $app_dir \
-  && cd $app_dir && carton install --deployment" 
+  && cd $app_dir && carton install --deployment" || exit 1
 fi
 
 
