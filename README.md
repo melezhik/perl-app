@@ -12,6 +12,10 @@ Installs Perl web application and dependencies, runs application as ubic service
 
 # Plugin parameters:
 
+## app_source_url
+
+Application source code remote git url, no default value, obligatory parameter
+
 ## git_branch 
 
 Git branch name, default value is `master`
@@ -27,10 +31,6 @@ Home directory for application source code and dependencies get installed by car
 ## http_port
 
 A http port application web service will be listen to, default value is `5000`
-
-## app_source_url
-
-Application source code remote git url, no default value, obligatory parameter
 
 
 # Author
