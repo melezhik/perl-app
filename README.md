@@ -35,7 +35,7 @@ Application user name, perl application will be run with this user privileges, d
 
 Home directory for application source code and dependencies get installed by carton, default value is `/opt/perl-app/`
 
-## app_dir 
+## app_script
 
 Name of application script to be run, default value is `app.psgi`
 
