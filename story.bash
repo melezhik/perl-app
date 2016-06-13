@@ -2,6 +2,8 @@
 app_dir=$(config app_dir)
 app_user=$(config app_user)
 app_source_url=$(config app_source_url)
+app_script=$(config app_script)
+
 git_branch=$(config git_branch)
 http_port=$(config http_port)
 
@@ -39,7 +41,7 @@ sub start {
  
 __PACKAGE__->new(
     server => 'Starman',
-    app => "$app_dir/app.psgi",
+    app => "$app_dir/$app_script",
     port => $http_port,
     user => "$app_user",
 );

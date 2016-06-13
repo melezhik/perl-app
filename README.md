@@ -1,14 +1,21 @@
 # SYNOPSIS
 
-Installs Perl web application and dependencies, runs application as ubic service with Starman.
+Installs Perl psgi application and dependencies, runs application as ubic service with Starman.
 
 # INSTALL
 
     $ sparrow plg install perl-app
 
+# Prerequisites
+
+A following packages should be installed so this plugin works properly:
+
+* git client 
+* cpanm client 
+
 # USAGE
 
-    $ sudo -E sparrow plg run perl-app app_source_url={git-remote-repository-url}
+    $ sudo -E sparrow plg run perl-app --param app_source_url={git-remote-repository-url}
 
 # Plugin parameters:
 
@@ -27,6 +34,11 @@ Application user name, perl application will be run with this user privileges, d
 ## app_dir 
 
 Home directory for application source code and dependencies get installed by carton, default value is `/opt/perl-app/`
+
+## app_dir 
+
+Name of application script to be run, default value is `app.psgi`
+
 
 ## http_port
 
