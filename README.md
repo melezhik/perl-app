@@ -4,7 +4,7 @@ Installs Perl psgi application and dependencies, runs application as ubic servic
 
 # INSTALL
 
-    $ sparrow plg install perl-app
+    $ sudo sparrow plg install perl-app
 
 # Prerequisites
 
@@ -15,7 +15,7 @@ A following packages should be installed so this plugin works properly:
 
 # USAGE
 
-    $ sudo -E sparrow plg run perl-app --param app_source_url={git-remote-repository-url}
+    $ sudo sparrow plg run perl-app --param app_source_url={git-remote-repository-url}
 
 # Plugin parameters:
 

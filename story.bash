@@ -1,11 +1,20 @@
 
 app_dir=$(config app_dir)
+app_dir=${app_dir:-/opt/perl-app}
+
 app_user=$(config app_user)
+app_user=${app_user:-perl-app}
+
 app_source_url=$(config app_source_url)
+
 app_script=$(config app_script)
+app_script=${script_dir:-app.psgi}
 
 git_branch=$(config git_branch)
+git_branch=${git_branch:-master}
+
 http_port=$(config http_port)
+http_port=${http_port:-5000}
 
 sudo useradd -m --shell `which bash` $app_user
 
@@ -19,10 +28,13 @@ sudo ubic-admin setup --batch-mode --quiet
 sudo ubic stop perl-app
 
 if test -d $app_dir/.git; then
-  sudo -u $app_user bash --login -c "cd $app_dir && git checkout $git_branch && git pull && carton install --deployment" || exit 1
+  #set -x;
+  su --shell `which bash` --login -c "cd $app_dir && git checkout $git_branch && git pull && carton install --deployment" \
+  $app_user || exit 1
 else
-  sudo -u $app_user bash --login -c "git clone --branch $git_branch $app_source_url $app_dir \
-  && cd $app_dir && carton install --deployment" || exit 1
+  #set -x;
+  su --shell `which bash` --login -c "git clone --branch $git_branch $app_source_url $app_dir \
+  && cd $app_dir && carton install --deployment" $app_user || exit 1
 fi
 
 
