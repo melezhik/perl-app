@@ -56,6 +56,8 @@ __PACKAGE__->new(
     app => "$app_dir/$app_script",
     port => $http_port,
     user => "$app_user",
+    stdout   => "$app_dir/stdout.log",
+    stderr   => "$app_dir/stderr.log",
 );
 
 EOF
