@@ -1,20 +1,15 @@
 
 app_dir=$(config app_dir)
-app_dir=${app_dir:-/opt/perl-app}
 
 app_user=$(config app_user)
-app_user=${app_user:-perl-app}
 
 app_source_url=$(config app_source_url)
 
 app_script=$(config app_script)
-app_script=${script_dir:-app.psgi}
 
 git_branch=$(config git_branch)
-git_branch=${git_branch:-master}
 
 http_port=$(config http_port)
-http_port=${http_port:-5000}
 
 sudo useradd -m --shell `which bash` $app_user
 
