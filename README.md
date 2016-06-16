@@ -11,7 +11,8 @@ Installs Perl psgi application and dependencies, runs application as ubic servic
 A following packages should be installed so this plugin works properly:
 
 * git client 
-* cpanm client 
+* cpanm
+* carton
 
 # USAGE
 
